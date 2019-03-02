@@ -38,7 +38,8 @@ function setSquares() {
             var clickedColor = this.style.backgroundColor;
             if (clickedColor === pickedColor) {
                 messageDisplay.textContent = "Correct!";
-                changeColor(clickedColor);       
+                correctAnswer(clickedColor);       
+                this.style.backgroundColor = pickedColor;
                 h1.style.backgroundColor = clickedColor;
                 resetButton.textContent = "Play Again?"
             } else {
@@ -74,10 +75,10 @@ resetButton.addEventListener("click", function () {
     reset();
 });
 
-function changeColor(color) {
+function correctAnswer(color) {
     //loop trough all the squares
     for (var i = 0; i < squares.length; i++) {
-        squares[i].style.backgroundColor = color;
+        squares[i].style.backgroundColor = "#232323";
     }
 };
 
